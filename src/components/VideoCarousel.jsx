@@ -24,7 +24,7 @@ const VideoCarousel = () => {
 
   useGSAP(() => {
     gsap.to("#slider", {
-      transform: `translate(${-100 * videoId})%}`,
+      transform: `translate(${-100 * videoId}%)`,
       duration: 2,
       ease: "power2.inOut",
     });
@@ -96,7 +96,8 @@ const VideoCarousel = () => {
       }
       const animUpdate = () => {
         anim.progress(
-          videoRef.current[videoId] / hightlightsSlides[videoId].videoDuration
+          videoRef.current[videoId].currentTime /
+            hightlightsSlides[videoId].videoDuration
         );
       };
       if (isPlaying) {
