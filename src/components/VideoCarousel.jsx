@@ -42,6 +42,25 @@ const VideoCarousel = () => {
       });
     }
   }, [videoId, startPlay]);
+
+  const handleProcess = (type, i) => {
+    switch (type) {
+      case "video-end":
+        setVideo((prev) => ({ ...prev, isEnd: true, videoId: i + 1 }));
+        break;
+      case "video-last":
+        setVideo((prev) => ({ ...prev, isLastVideo: true }));
+        break;
+      case "video-reset":
+        setVideo((prev) => ({ ...prev, isLastVideo: false, videoId: 0 }));
+        break;
+      case "play":
+        setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
+        break;
+      default:
+        return video;
+    }
+  };
   return (
     <>
       <div className="flex items-center">
