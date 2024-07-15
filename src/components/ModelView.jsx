@@ -13,8 +13,12 @@ const ModelView = ({
     <View
       index={index}
       id={gsapType}
-      className={`border-2 border-red-500 w-full h-full s{index === 2} ? 'right-[-100%] : ''`}
-    ></View>
+      className={`border-2 border-red-500 w-full h-full ${
+        index === 2
+      } ? 'right-[-100%] : ''`}
+    >
+      <ambientLight />
+    </View>
   );
 };
 
