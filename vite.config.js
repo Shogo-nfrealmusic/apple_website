@@ -9,6 +9,9 @@ export default defineConfig({
   plugins: [react(), sentryVitePlugin({
     org: "shogo-5e",
     project: "javascript-react"
+  }), sentryVitePlugin({
+    org: "shogo-5e",
+    project: "javascript-react"
   })],
 
   build: {
