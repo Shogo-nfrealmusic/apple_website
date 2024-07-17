@@ -2,10 +2,21 @@ import { useGSAP } from "@gsap/react";
 import { animateWithGsap } from "../utils/animations";
 import { explore1Img, explore2Img, exploreVideo } from "../utils";
 import { useRef } from "react";
+import gsap from "gsap";
 
 const Features = () => {
   const videoRef = useRef();
   useGSAP(() => {
+    gsap.to("#exploreVideo", {
+      scrollTrigger: {
+        trigger: "#exploreVideo",
+        toggleActions: "play pause reverse restart",
+        start: "-10% bottom",
+      },
+      onComplete: () => {
+        videoRef.current.play();
+      },
+    });
     animateWithGsap("#features_title", {
       y: 0,
       opacity: 1,
@@ -38,7 +49,7 @@ const Features = () => {
           <div className="mt-32 mb-24 pl-24">
             <h2 className="text-5xl lg: text-7xl font-semibold">iPhone.</h2>
             <h2 className="text-5xl lg: text-7xl font-semibold">
-              Forged in titanium.
+              Forged in Titanium.
             </h2>
           </div>
           <div className="flex-center flex-col sm:px-10">
