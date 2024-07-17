@@ -45,7 +45,7 @@ const HowItWorks = () => {
               <video
                 className="pointer-events-none"
                 playsInline
-                preload="none"
+                preload=""
                 autoPlay
                 loop
                 ref={videoRef}
@@ -54,7 +54,9 @@ const HowItWorks = () => {
               </video>
             </div>
           </div>
-          <p>Andrew Tate</p>
+          <p className="text-gray font-semibold text-center mt-3">
+            Andrew Tate
+          </p>
         </div>
       </div>
     </section>
