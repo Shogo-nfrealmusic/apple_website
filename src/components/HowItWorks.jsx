@@ -58,9 +58,9 @@ const HowItWorks = () => {
               <video
                 className="pointer-events-none"
                 playsInline
-                preload=""
+                preload="none"
+                // muted
                 autoPlay
-                loop
                 ref={videoRef}
               >
                 <source src={frameVideo} type="video/mp4" />
