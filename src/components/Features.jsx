@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import { animateWithGsap } from "../utils/animations";
-import { exploreVideo } from "../utils";
+import { explore1Img, explore2Img, exploreVideo } from "../utils";
 import { useRef } from "react";
 
 const Features = () => {
@@ -10,6 +10,15 @@ const Features = () => {
       y: 0,
       opacity: 1,
     });
+    animateWithGsap(
+      ".g_grow",
+      {
+        scale: 1,
+        opacity: 1,
+        ease: "power1",
+      },
+      { scrub: 5.5 }
+    );
   }, []);
   return (
     <section className="h-full common-padding bg-zinc relative overflow-hidden">
@@ -39,6 +48,24 @@ const Features = () => {
               >
                 <source src={exploreVideo} type="video/mp4" />
               </video>
+            </div>
+            <div className="flex flex-col w-full relative">
+              <div className="feature-video-container">
+                <div className="overflow-hidden flex-1 h-[50vh]">
+                  <img
+                    src={explore1Img}
+                    alt="titanium"
+                    className="feature-video g_grow"
+                  />
+                </div>
+                <div className="overflow-hidden flex-1 h-[50vh]">
+                  <img
+                    src={explore2Img}
+                    alt="titanium2"
+                    className="feature-video g_grow"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
